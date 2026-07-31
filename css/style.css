@@ -98,6 +98,19 @@ a {
     }
 }
 
+@media (max-width:640px) {
+    .hero {
+        min-height: 100svh;
+        align-items: flex-start;
+        padding-top: 96px;
+        padding-bottom: 56px;
+    }
+
+    .scroll-cue {
+        display: none;
+    }
+}
+
 .idline {
     font-family: var(--font-mono);
     font-size: 14px;
