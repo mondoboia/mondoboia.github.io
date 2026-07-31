@@ -1,41 +1,185 @@
 [
     {
-        "title": "",
-        "year": 0,
-        "status": "",
-        "image": "images/",
-        "description": "",
-        "stack": [],
-        "role": "",
-        "link": "",
+        "title": "Aldrovandi Digital Twin",
+        "year": 2026,
+        "status": "concluded",
+        "image": "images/aldrovandi.png",
+        "description": "A digital reconstruction of the exhibition The Other Renaissance: Ulisse Aldrovandi and the Wonders of the World, connecting 3D heritage assets, Linked Open Data, and interactive narrative visualisation for web and VR.",
+        "stack": [
+            "Python",
+            "Flask",
+            "SPARQL",
+            "Fuseki",
+            "JavaScript",
+            "Chart.js",
+            "D3.js",
+            "HTML5",
+            "CSS"
+        ],
+        "role": "Contributed to the Aldrovandi Digital Twin within the CHANGES project (NextGenerationEU, PE 0000020). Worked on software development, semantic data modelling, and integration workflows linking 3D cultural heritage assets, Linked Open Data, and narrative visualisation services across web and VR. Extended the MELODY platform into an API-based narrative visualisation service, enabling dynamic integration of semantic data, visualisations, and contextual narratives within the Aton digital twin environment. Also built the companion web catalogue for browsing, searching, and exploring the digitised objects outside the immersive experience.",
+        "link": "https://projects.vidilab.unibo.it/aldrovandi/",
         "papers": [
-            {}
+            {
+                "label": "(Barzaghi et al. 2025)",
+                "title": "A reproducible workflow for the creation of digital twins in the cultural heritage domain",
+                "url": "https://transformations.episciences.org/articles/14773"
+            },
+            {
+                "label": "(Barzaghi et al. 2025)",
+                "title": "From Metadata to Storytelling: A Framework For 3D Cultural Heritage Visualization on RDF Data",
+                "url": "https://amsacta.unibo.it/id/eprint/8380/"
+            },
+            {
+                "label": "(Barzaghi et al. 2024)",
+                "title": "A Proposal for a FAIR Management of 3D Data in Cultural Heritage: The Aldrovandi Digital Twin Case",
+                "url": "https://dx.doi.org/10.3724/2096-7004.di.2024.0061"
+            }
         ]
     },
     {
-        "title": "",
-        "year": 0,
-        "status": "",
-        "image": "images/",
-        "description": "",
-        "stack": [],
-        "role": "",
-        "link": "",
+        "title": "MELODY — Make mE a Linked Open Data storY",
+        "year": 2025,
+        "status": "active",
+        "image": "images/melody.png",
+        "description": "An extensible, reusable web platform for retrieving, presenting, and publishing Linked Data as interactive Data Stories, used in graduate courses and ongoing research.",
+        "stack": [
+            "Python",
+            "Flask",
+            "SPARQLWrapper",
+            "JavaScript",
+            "React",
+            "SPARQL",
+            "Ajax",
+            "HTML5",
+            "CSS"
+        ],
+        "role": "Lead Full-stack Developer on MELODY (Polifonia, H2020, G.A. 101004746), grown out of my master's thesis into an actively maintained platform. Own the full software lifecycle — prototyping, full-stack development, and maintenance of live instances — and built the dynamic components for SPARQL querying, HTML rendering, and data visualisation that power the storytelling experience.",
+        "link": "https://projects.dharc.unibo.it/melody/",
         "papers": [
-            {}
+            {
+                "label": "(Renda et al. 2023)",
+                "title": "Melody: A Platform for Linked Open Data Visualisation and Curated Storytelling",
+                "url": "https://dl.acm.org/doi/10.1145/3603163.3609035"
+            }
         ]
     },
     {
-        "title": "",
-        "year": 0,
-        "status": "",
-        "image": "images/",
-        "description": "",
-        "stack": [],
-        "role": "",
-        "link": "",
+        "title": "Polifonia Web Portal",
+        "year": 2024,
+        "status": "concluded",
+        "image": "images/portal.png",
+        "description": "A web application for serendipitous exploration of musical heritage data from the Polifonia project, integrating nine heterogeneous knowledge graphs through fast text-search indexing and a unified REST API.",
+        "stack": [
+            "Python",
+            "Flask",
+            "SPARQLWrapper",
+            "rdflib",
+            "React",
+            "Sonic",
+            "SPARQL",
+            "Blazegraph",
+            "Docker"
+        ],
+        "role": "Backend & Data Engineer on the Polifonia Web Portal (Polifonia, H2020, G.A. 101004746). Built the Flask backend and RESTful APIs consumed by a React-native frontend, implemented data reconciliation pipelines to align entities across nine heterogeneous knowledge graphs stored in Blazegraph, integrated Sonic for fast text-search indexing, and containerised and deployed the system with Docker.",
+        "link": "https://polifonia.disi.unibo.it/portal/",
         "papers": [
-            {}
+            {
+                "label": "(Grasso et al. 2024)",
+                "title": "From Ontology Design to User Experience. A Methodology to Design Interfaces for Information Seeking Purposes",
+                "url": "https://umanisticadigitale.unibo.it/article/view/19038"
+            },
+            {
+                "label": "(Grasso et al. 2024)",
+                "title": "From Data Complexity to User Simplicity: A Framework for Linked Open Data Reconciliation and Serendipitous Discovery",
+                "url": "https://arxiv.org/abs/2405.15520"
+            }
         ]
+    },
+    {
+        "title": "Ragù",
+        "year": 2023,
+        "status": "concluded",
+        "image": "images/ragu.svg",
+        "description": "A digital archive collecting, cataloguing, and making accessible a little-explored part of Italian culinary heritage: handwritten family cookbooks.",
+        "stack": [
+            "Python",
+            "pandas",
+            "NumPy",
+            "JSON",
+            "GitHub Actions"
+        ],
+        "role": "In charge of data management for Ragù, structuring and cleaning the archive's dataset and automating catalogue updates.",
+        "link": "https://raguproject.github.io/",
+        "papers": [
+            {
+                "label": "(Renda and Daquino 2025)",
+                "title": "Ragù. Preserving Italian Cookbooks in a Sustainable Crowdsourced Digital Collection",
+                "url": "https://umanisticadigitale.unibo.it/article/view/21113"
+            }
+        ]
+    },
+    {
+        "title": "The Journey of Art",
+        "year": 2021,
+        "status": "concluded",
+        "image": "images/journey.png",
+        "description": "A digital storytelling project tracing how a work of art moves before arriving at its current location, built on Linked Open Data from the Zeri Photographic Archive.",
+        "stack": [
+            "SPARQL",
+            "RDF",
+            "Apache Jena Fuseki",
+            "Python",
+            "SPARQLWrapper",
+            "pandas",
+            "matplotlib",
+            "JavaScript",
+            "amCharts",
+            "HTML5",
+            "CSS"
+        ],
+        "role": "Extracted, organised, manipulated, and visualised the underlying Linked Open Data for the project, from SPARQL querying against the Zeri archive through to the final interactive visualisations.",
+        "link": "https://elisasilvad.github.io/the_journey_of_art/",
+        "papers": []
+    },
+    {
+        "title": "Cool — COntent mOduLe",
+        "year": 2021,
+        "status": "concluded",
+        "image": "images/cool.png",
+        "description": "A knowledge representation spin-off of the ArCo network, defining an ontology module to represent and provide structured knowledge about a specific class of cultural assets.",
+        "stack": [
+            "SPARQL",
+            "OWL",
+            "RDF",
+            "Protégé",
+            "Apache Jena Fuseki",
+            "WIDOCO",
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "role": "Defined the competency questions, contributed to part of the conceptual model, and formalised it into an OWL ontology using Protégé, publishing the documentation with WIDOCO.",
+        "link": "https://coolmodule.github.io/CoolProject/",
+        "papers": []
+    },
+    {
+        "title": "WoodsLOD",
+        "year": 2020,
+        "status": "concluded",
+        "image": "images/woods.png",
+        "description": "A Linked Open Data project connecting heterogeneous objects and entities — with seemingly little in common — to reveal their shared historical association with a single event.",
+        "stack": [
+            "RDF",
+            "Turtle",
+            "CIDOC-CRM",
+            "CCO",
+            "OWL-Time",
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "role": "Modelled and published the dataset as Linked Open Data, applying the CIDOC-CRM and CCO standards together with the OWL-Time ontology to represent temporal relationships between entities.",
+        "link": "https://woodslod.github.io/woodsLOD/index.html",
+        "papers": []
     }
 ]

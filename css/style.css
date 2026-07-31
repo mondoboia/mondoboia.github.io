@@ -323,21 +323,21 @@ h1 .accent {
     max-height: 0;
     overflow: hidden;
     padding-left: 76px;
-    transition: max-height .35s ease;
+    transition: max-height .4s ease;
 }
 
 .row.open .row-detail {
-    max-height: 600px;
+    max-height: 760px;
 }
 
 .detail-inner {
     padding-top: 20px;
     display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 24px;
+    grid-template-columns: 280px 1fr;
+    gap: 28px;
 }
 
-@media (max-width:560px) {
+@media (max-width:700px) {
     .detail-inner {
         grid-template-columns: 1fr;
     }
@@ -349,8 +349,8 @@ h1 .accent {
 }
 
 .thumb {
-    height: 120px;
-    border-radius: 6px;
+    height: 190px;
+    border-radius: 8px;
     background: repeating-linear-gradient(45deg, var(--accent) 0 8px, #e9b46a 8px 16px);
     display: flex;
     align-items: center;
@@ -359,6 +359,10 @@ h1 .accent {
     font-family: var(--font-mono);
     font-size: 11px;
     overflow: hidden;
+}
+
+.thumb.has-image {
+    background: var(--line);
 }
 
 .thumb img {
