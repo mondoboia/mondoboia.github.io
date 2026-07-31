@@ -349,6 +349,7 @@ h1 .accent {
 }
 
 .thumb {
+    position: relative;
     height: 190px;
     border-radius: 8px;
     background: repeating-linear-gradient(45deg, var(--accent) 0 8px, #e9b46a 8px 16px);
@@ -370,6 +371,20 @@ h1 .accent {
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+.thumb.has-image img {
+    filter: grayscale(1) contrast(1.05) brightness(1.02);
+}
+
+.thumb.has-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--accent);
+    mix-blend-mode: color;
+    opacity: .88;
+    pointer-events: none;
 }
 
 .detail-grid {
