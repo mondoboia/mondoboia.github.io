@@ -28,10 +28,11 @@ a {
 /* ---------- Hero ---------- */
 .hero {
     position: relative;
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 76px 32px 66px;
+    min-height: 100vh;
+    padding: 32px 0;
     overflow: hidden;
+    display: flex;
+    align-items: center;
     background-color: var(--primary);
     background-image:
         radial-gradient(rgba(255, 255, 255, 0.16) 2px, transparent 2px),
@@ -51,7 +52,50 @@ a {
 .hero-inner {
     position: relative;
     z-index: 2;
-    max-width: 600px;
+    max-width: 1080px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 32px;
+}
+
+.scroll-cue {
+    position: absolute;
+    left: 50%;
+    bottom: 36px;
+    transform: translateX(-50%);
+    z-index: 2;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.scroll-cue span {
+    width: 1px;
+    height: 26px;
+    background: rgba(255, 255, 255, 0.4);
+    animation: scrollpulse 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollpulse {
+
+    0%,
+    100% {
+        opacity: .3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-cue span {
+        animation: none;
+    }
 }
 
 .idline {
