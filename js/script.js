@@ -40,7 +40,7 @@ function renderProjects(projects) {
 
         const papersHtml = (p.papers && p.papers.length)
             ? p.papers.map(pap => `<a href="${pap.url}" target="_blank" rel="noopener"${pap.title ? ` title="${escapeHtml(pap.title)}"` : ''}>${escapeHtml(pap.label)}</a>`).join('')
-            : '<span class="no-papers">no papers linked</span>';
+            : '';
 
         row.innerHTML = `
       <div class="row-top">
@@ -52,17 +52,17 @@ function renderProjects(projects) {
       <div class="row-desc">${escapeHtml(p.description || '')}</div>
       <div class="row-detail">
         <div class="detail-inner">
-          <div class="thumb${p.image ? ' has-image' : ''}">${thumbContent}</div>
+          <div class="thumb-col">
+            <div class="thumb${p.image ? ' has-image' : ''}">${thumbContent}</div>
+            ${p.link ? `<a class="view-project" href="${p.link}" target="_blank" rel="noopener">View project ↗</a>` : ''}
+          </div>
           <div class="detail-grid">
             <div class="block">
               <div class="k">Stack</div>
               <div class="tags">${(p.stack || []).map(s => `<span class="tag">${escapeHtml(s)}</span>`).join('')}</div>
             </div>
             <div class="block"><div class="k">What I did</div>${escapeHtml(p.role || '')}</div>
-            <div class="block links">
-              ${p.link ? `<a href="${p.link}" target="_blank" rel="noopener">View project ↗</a>` : ''}
-              ${papersHtml}
-            </div>
+            ${papersHtml ? `<div class="block links"><div class="k">References</div>${papersHtml}</div>` : ''}
           </div>
         </div>
       </div>

@@ -348,6 +348,12 @@ h1 .accent {
     }
 }
 
+.thumb-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
 .thumb {
     position: relative;
     height: 190px;
@@ -381,10 +387,29 @@ h1 .accent {
     content: "";
     position: absolute;
     inset: 0;
-    background: var(--accent);
+    background: var(--primary);
     mix-blend-mode: color;
     opacity: .88;
     pointer-events: none;
+}
+
+.view-project {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    text-decoration: none;
+    color: var(--ink);
+    border: 1.5px solid var(--ink);
+    padding: 9px 16px;
+    border-radius: 100px;
+    transition: background .18s, color .18s;
+}
+
+.view-project:hover {
+    background: var(--ink);
+    color: var(--bg);
 }
 
 .detail-grid {
@@ -430,12 +455,6 @@ h1 .accent {
 .links a:hover {
     border-color: var(--primary);
     color: var(--primary);
-}
-
-.no-papers {
-    color: var(--sub);
-    font-family: var(--font-mono);
-    font-size: 12px;
 }
 
 footer {
