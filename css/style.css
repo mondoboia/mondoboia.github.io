@@ -111,23 +111,6 @@ a {
     }
 }
 
-.idline {
-    font-family: var(--font-mono);
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.85);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 22px;
-}
-
-.idline .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #ffffff;
-}
-
 .byline {
     font-family: var(--font-mono);
     font-size: 16px;
@@ -153,6 +136,16 @@ h1 {
 h1 .accent {
     color: var(--accent);
     font-weight: 700;
+}
+
+.rotator {
+    display: inline-block;
+    transition: opacity .3s ease, transform .3s ease;
+}
+
+.rotator.fade-out {
+    opacity: 0;
+    transform: translateY(6px);
 }
 
 .hero p {
