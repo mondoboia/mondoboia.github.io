@@ -96,29 +96,6 @@
         ]
     },
     {
-        "title": "Ragù",
-        "year": 2023,
-        "status": "concluded",
-        "image": "images/ragu.svg",
-        "description": "A digital archive collecting, cataloguing, and making accessible a little-explored part of Italian culinary heritage: handwritten family cookbooks.",
-        "stack": [
-            "Python",
-            "pandas",
-            "NumPy",
-            "JSON",
-            "GitHub Actions"
-        ],
-        "role": "In charge of data management for Ragù, structuring and cleaning the archive's dataset and automating catalogue updates.",
-        "link": "https://raguproject.github.io/",
-        "papers": [
-            {
-                "label": "(Renda and Daquino 2025)",
-                "title": "Ragù. Preserving Italian Cookbooks in a Sustainable Crowdsourced Digital Collection",
-                "url": "https://umanisticadigitale.unibo.it/article/view/21113"
-            }
-        ]
-    },
-    {
         "title": "The Journey of Art",
         "year": 2021,
         "status": "concluded",
@@ -181,5 +158,28 @@
         "role": "Modelled and published the dataset as Linked Open Data, applying the CIDOC-CRM and CCO standards together with the OWL-Time ontology to represent temporal relationships between entities.",
         "link": "https://woodslod.github.io/woodsLOD/index.html",
         "papers": []
+    },
+    {
+        "title": "Ragù",
+        "year": 2023,
+        "status": "concluded",
+        "image": "images/ragu.svg",
+        "description": "A digital archive collecting, cataloguing, and making accessible a little-explored part of Italian culinary heritage: handwritten family cookbooks.",
+        "stack": [
+            "Python",
+            "pandas",
+            "NumPy",
+            "JSON",
+            "GitHub Actions"
+        ],
+        "role": "In charge of data management for Ragù, structuring and cleaning the archive's dataset and automating catalogue updates.",
+        "link": "https://raguproject.github.io/",
+        "papers": [
+            {
+                "label": "(Renda and Daquino 2025)",
+                "title": "Ragù. Preserving Italian Cookbooks in a Sustainable Crowdsourced Digital Collection",
+                "url": "https://umanisticadigitale.unibo.it/article/view/21113"
+            }
+        ]
     }
 ]
