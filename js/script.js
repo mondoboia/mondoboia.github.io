@@ -3,7 +3,6 @@ document.getElementById('year').textContent = new Date().getFullYear();
 // ---- Hero headline rotator — edit this list to change what cycles through ----
 const rotatorWords = [
     "Linked Data systems",
-    "interpretable interfaces",
     "cultural heritage infrastructures",
     "semantic data pipelines",
     "data storytelling tools"
