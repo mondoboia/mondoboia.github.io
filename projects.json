@@ -52,7 +52,8 @@
             "React",
             "SPARQL",
             "HTML",
-            "CSS"
+            "CSS",
+            "Usability testing"
         ],
         "role": "Lead Full-stack Developer on MELODY (Polifonia, H2020, G.A. 101004746), originally developed from my master’s thesis and subsequently expanded within the Polifonia project. I lead the full software lifecycle, from prototyping and architectural design to full-stack development, deployment, documentation, and maintenance of live instances. I developed the reusable components for SPARQL querying, data aggregation, visualisation, HTML rendering, and narrative composition that underpin the platform’s storytelling workflow.",
         "link": "https://projects.dharc.unibo.it/melody/",
@@ -80,7 +81,8 @@
             "Sonic",
             "SPARQL",
             "Blazegraph",
-            "Docker"
+            "Docker",
+            "Usability testing"
         ],
         "role": "Backend & Data Engineer on the Polifonia Web Portal (Polifonia, H2020, G.A. 101004746). Built the Flask backend and REST APIs supporting a React frontend, implemented reconciliation workflows to align entities across nine heterogeneous knowledge graphs, and integrated Sonic indexing to support rapid search and exploratory access.",
         "link": "https://polifonia.disi.unibo.it/portal/",
