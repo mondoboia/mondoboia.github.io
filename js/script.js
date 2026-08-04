@@ -47,7 +47,8 @@ function renderProjects(projects) {
 
     projects.forEach((p, i) => {
         const num = String(i + 1).padStart(2, '0');
-        const statusLabel = p.status === 'active' ? 'active' : 'concluded';
+        const validStatuses = ['active', 'maintained', 'completed'];
+        const statusClass = validStatuses.includes(p.status) ? p.status : 'completed';
 
         const row = document.createElement('div');
         row.className = 'row';
@@ -67,7 +68,7 @@ function renderProjects(projects) {
       <div class="row-top">
         <span class="row-num">${num} <span class="year">${p.year ?? ''}</span></span>
         <span class="row-title">${escapeHtml(p.title)}</span>
-        <span class="row-status ${p.status === 'active' ? '' : 'concluded'}"><span class="dot"></span>${statusLabel}</span>
+        <span class="row-status ${statusClass}"><span class="dot"></span>${statusClass}</span>
         <span class="row-toggle">expand</span>
       </div>
       <div class="row-desc">${escapeHtml(p.description || '')}</div>

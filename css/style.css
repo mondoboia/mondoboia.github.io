@@ -289,12 +289,12 @@ h1 .accent {
     background: var(--accent);
 }
 
-.row-status.concluded .dot {
-    background: var(--line);
+.row-status.maintained .dot {
+    background: var(--primary);
 }
 
-.row-status.concluded {
-    color: var(--sub);
+.row-status.completed .dot {
+    background: var(--line);
 }
 
 .row-toggle {

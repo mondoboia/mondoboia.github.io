@@ -2,7 +2,7 @@
     {
         "title": "Aldrovandi Digital Twin",
         "year": 2026,
-        "status": "concluded",
+        "status": "completed",
         "image": "images/aldrovandi.png",
         "description": "A digital reconstruction of the exhibition The Other Renaissance: Ulisse Aldrovandi and the Wonders of the World, connecting 3D heritage assets, Linked Open Data, and interactive narrative visualisation for web and VR.",
         "stack": [
@@ -39,7 +39,7 @@
     {
         "title": "MELODY — Make mE a Linked Open Data storY",
         "year": 2025,
-        "status": "active",
+        "status": "mantained",
         "image": "images/melody.png",
         "description": "An extensible, reusable web platform for retrieving, presenting, and publishing Linked Data as interactive Data Stories, used in graduate courses and ongoing research.",
         "stack": [
@@ -66,7 +66,7 @@
     {
         "title": "Polifonia Web Portal",
         "year": 2024,
-        "status": "concluded",
+        "status": "mantained",
         "image": "images/portal.png",
         "description": "A web application for serendipitous exploration of musical heritage data from the Polifonia project, integrating nine heterogeneous knowledge graphs through fast text-search indexing and a unified REST API.",
         "stack": [
@@ -98,7 +98,7 @@
     {
         "title": "The Journey of Art",
         "year": 2021,
-        "status": "concluded",
+        "status": "completed",
         "image": "images/journey.png",
         "description": "A digital storytelling project tracing how a work of art moves before arriving at its current location, built on Linked Open Data from the Zeri Photographic Archive.",
         "stack": [
@@ -121,7 +121,7 @@
     {
         "title": "Cool — COntent mOduLe",
         "year": 2021,
-        "status": "concluded",
+        "status": "completed",
         "image": "images/cool.png",
         "description": "A knowledge representation spin-off of the ArCo network, defining an ontology module to represent and provide structured knowledge about a specific class of cultural assets.",
         "stack": [
@@ -142,7 +142,7 @@
     {
         "title": "WoodsLOD",
         "year": 2020,
-        "status": "concluded",
+        "status": "completed",
         "image": "images/woods.png",
         "description": "A Linked Open Data project modelling the relationships between heterogeneous cultural and historical entities connected to a shared event, using established cultural heritage and temporal ontologies.",
         "stack": [
@@ -162,7 +162,7 @@
     {
         "title": "Ragù",
         "year": 2023,
-        "status": "concluded",
+        "status": "mantained",
         "image": "images/ragu.svg",
         "description": "A digital archive collecting, cataloguing, and making accessible a little-explored part of Italian culinary heritage: handwritten family cookbooks.",
         "stack": [
