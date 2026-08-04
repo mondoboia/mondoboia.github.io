@@ -50,6 +50,10 @@ function renderProjects(projects) {
         const validStatuses = ['active', 'maintained', 'completed'];
         const statusClass = validStatuses.includes(p.status) ? p.status : 'completed';
 
+        const yearText = p.yearEnd
+            ? `${p.year}–${p.yearEnd}`
+            : (p.year ?? '');
+
         const row = document.createElement('div');
         row.className = 'row';
         row.tabIndex = 0;
@@ -66,7 +70,7 @@ function renderProjects(projects) {
 
         row.innerHTML = `
       <div class="row-top">
-        <span class="row-num">${num} <span class="year">${p.year ?? ''}</span></span>
+        <span class="row-num">${num} <span class="year">${yearText}</span></span>
         <span class="row-title">${escapeHtml(p.title)}</span>
         <span class="row-status ${statusClass}"><span class="dot"></span>${statusClass}</span>
         <span class="row-toggle">expand</span>

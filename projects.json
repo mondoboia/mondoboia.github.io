@@ -1,7 +1,8 @@
 [
     {
         "title": "Aldrovandi Digital Twin",
-        "year": 2026,
+        "year": 2023,
+        "yearEnd": 2026,
         "status": "completed",
         "image": "images/aldrovandi.png",
         "description": "A digital reconstruction of the exhibition The Other Renaissance: Ulisse Aldrovandi and the Wonders of the World, connecting 3D heritage assets, Linked Open Data, and interactive narrative visualisation for web and VR.",
@@ -38,7 +39,8 @@
     },
     {
         "title": "MELODY — Make mE a Linked Open Data storY",
-        "year": 2025,
+        "year": 2021,
+        "yearEnd": 2025,
         "status": "maintained",
         "image": "images/melody.png",
         "description": "An extensible, reusable web platform for retrieving, presenting, and publishing Linked Data as interactive Data Stories, used in graduate courses and ongoing research.",
@@ -65,7 +67,8 @@
     },
     {
         "title": "Polifonia Web Portal",
-        "year": 2024,
+        "year": 2023,
+        "yearEnd": 2024,
         "status": "maintained",
         "image": "images/portal.png",
         "description": "A web application for serendipitous exploration of musical heritage data from the Polifonia project, integrating nine heterogeneous knowledge graphs through fast text-search indexing and a unified REST API.",

@@ -260,7 +260,8 @@ h1 .accent {
     font-family: var(--font-mono);
     font-size: 13px;
     color: var(--sub);
-    min-width: 58px;
+    min-width: 80px;
+    white-space: nowrap;
 }
 
 .row-num .year {
