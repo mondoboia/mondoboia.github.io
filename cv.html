@@ -1,0 +1,655 @@
+Claude finished the response
+What if, instead of a dowloadable file for vs, I create a page that is the cv in html, that can also be exported as pdf?
+
+
+Weighed HTML CV benefits and drafted printable page implementation
+Weighed HTML CV benefits and drafted printable page implementation
+My take: yes, do the HTML page — it's the better long-term choice for a site like yours. A few reasons:
+
+Single source of truth. A static cv.pdf will silently drift out of sync the moment you update a project or role
+elsewhere; an HTML page you edit alongside everything else won't.
+It'll actually look like your site instead of a generic Word/LaTeX export, and it's readable on mobile without
+pinch-zooming.
+Export-to-PDF is one click away via the browser's native print dialog — you just need decent print CSS.
+The one tradeoff worth knowing: browser "print to PDF" is good but not pixel-perfect typesetting — page breaks and
+margins are a bit less controllable than a purpose-built PDF. For a CV (mostly text, clear sections) this is rarely a
+real problem, but it's why I'd keep the printed version deliberately simple: clean black-on-white, minimal color, so it
+reads well however it's exported and doesn't waste a recruiter's toner.
+
+I built it using your CV content, translated to English to match the rest of the site (your original mixes Italian
+narrative with English job specifics — flag anything I should adjust):
+
+
+CV as an HTML page with print-to-PDF support
+CV as an HTML page with print-to-PDF support
+Now pointing the hero's "CV" link at this page instead of a static file:
+
+
+Edited a file, read a file
+Edited a file, read a file
+A few things worth checking before you push:
+
+Google Scholar link is a placeholder # — your CV mentions it but the actual URL wasn't recoverable from the PDF text, so
+fill that in.
+Translations are mine, not yours — I translated the Italian bullet points (job responsibilities, especially the /DH.arc
+role) into English. Please read through them carefully; I tried to stay faithful to meaning but professional nuance in
+your own words matters here, especially phrases like "Responsabile dello sviluppo" → "Responsible for" — adjust the tone
+if it reads off.
+The screen version does use your brand colors (teal headers, off-white background) — the print stylesheet strips that
+down to black-on-white automatically when you click "Download as PDF" or use Ctrl/Cmd+P, so what gets printed/saved will
+be clean and ATS-friendly regardless of the on-screen styling.
+This is a standalone page — it doesn't share style.css, since a CV has different structural needs (dense entries vs.
+your index rows). If you'd rather it visually match the rest of the site more closely (same fonts are already shared,
+but let me know if you want the teal hero treatment echoed here too), I can adjust.
+
+Cv
+Code · HTML
+
+Index
+Code · HTML
+Giulia_Renda_-_Digital_Humanities_Researcher_&_Full-stack_Developer.pdf
+pdf
+
+I think that this one for content is better
+
+
+Reconstructed CV with updated content and reorganized skills sections
+Reconstructed CV with updated content and reorganized skills sections
+This version is much more complete — real dates (Nov 2021, not just 2022), the PhD supervisor, LLM/Ollama
+experimentation on the Polifonia work, and a full publications list with DOIs. Rebuilding the page with this as the
+source of truth.
+
+
+Ran a command, created a file, read a file
+Ran a command, created a file, read a file
+Rebuilt with the new content — real dates, your PhD supervisor, the Ollama/LLM detail on the Polifonia work, and all 10
+publications with working DOI links. Removed the phone number (not in this version) and updated the job title in the
+header to "Digital Humanities Researcher & Full-stack Developer."
+
+Two things worth flagging:
+
+Google Scholar link is still # — this version lists it too, but no URL was recoverable from either PDF. Send it over
+whenever you have it.
+Your homepage byline currently says "Software & Data Engineer," but this CV's header title is "Digital Humanities
+Researcher & Full-stack Developer" — noticeably different framing. Want me to update the homepage to match, or is that
+difference intentional (e.g. more technical framing on the landing page, more academic framing on the CV)?
+Also — now that I have exact publication citations, I can properly fill in the papers fields in projects.json for
+MELODY, Aldrovandi, Polifonia Portal, and Ragù (I only had placeholder (Author et al. year) labels there before, from
+your earlier screenshot). Want me to wire those up now?
+
+
+Cv
+Code · HTML
+
+
+
+
+
+Claude is AI and can make mistakes. Please double-check responses.
+
+
+Cv · HTML
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giulia Renda — CV</title>
+    <meta name="description" content="CV — Giulia Renda, Digital Humanities Researcher & Full-stack Developer.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FBF9F6;
+            --ink: #1A1A1A;
+            --sub: #6b6560;
+            --primary: #13737A;
+            --accent: #FBCA89;
+            --line: #E4E0DA;
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: var(--font-display);
+        }
+
+        a {
+            color: var(--primary);
+        }
+
+        .no-print {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 24px 32px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .back-link {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            text-decoration: none;
+            color: var(--sub);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .back-link:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .print-btn {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: #fff;
+            background: var(--primary);
+            border: none;
+            padding: 10px 18px;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: background .18s;
+        }
+
+        .print-btn:hover {
+            background: #0f5c62;
+        }
+
+        .cv {
+            max-width: 820px;
+            margin: 28px auto 80px;
+            padding: 56px 60px;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+        }
+
+        .cv-header {
+            border-bottom: 2px solid var(--ink);
+            padding-bottom: 20px;
+            margin-bottom: 28px;
+        }
+
+        .cv-header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0 0 4px;
+            letter-spacing: -0.01em;
+        }
+
+        .cv-header .title {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            color: var(--primary);
+            margin-bottom: 14px;
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            font-family: var(--font-mono);
+            font-size: 12.5px;
+            color: var(--sub);
+        }
+
+        .contact-row a {
+            color: var(--sub);
+            text-decoration: none;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .contact-row a:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-family: var(--font-mono);
+            font-size: 12.5px;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            color: var(--primary);
+            margin: 0 0 14px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        p.summary {
+            font-size: 15px;
+            line-height: 1.65;
+            color: var(--ink);
+            margin: 0;
+        }
+
+        .entry {
+            margin-bottom: 22px;
+        }
+
+        .entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .entry-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 4px;
+        }
+
+        .entry-role {
+            font-weight: 700;
+            font-size: 15.5px;
+        }
+
+        .entry-org {
+            color: var(--sub);
+            font-size: 14px;
+        }
+
+        .entry-meta {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--sub);
+            white-space: nowrap;
+        }
+
+        .entry-note {
+            font-size: 13px;
+            color: var(--sub);
+            margin: 2px 0 6px;
+        }
+
+        .entry ul {
+            margin: 8px 0 0;
+            padding-left: 18px;
+        }
+
+        .entry li {
+            font-size: 13.5px;
+            line-height: 1.6;
+            margin-bottom: 5px;
+            color: var(--ink);
+        }
+
+        .entry .thesis {
+            font-size: 13px;
+            color: var(--sub);
+            font-style: italic;
+            margin-top: 4px;
+        }
+
+        .entry .supervisor {
+            font-size: 13px;
+            color: var(--sub);
+            margin-top: 2px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 24px;
+        }
+
+        @media (max-width:600px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .skill-row {
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .skill-row b {
+            font-weight: 700;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .lang-tag {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            border: 1px solid var(--line);
+            padding: 4px 10px;
+            border-radius: 100px;
+        }
+
+        .other-roles li {
+            font-size: 13.5px;
+            line-height: 1.6;
+            margin-bottom: 6px;
+        }
+
+        .pub-list {
+            list-style: decimal;
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .pub-list li {
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            color: var(--ink);
+        }
+
+        .pub-list .pub-title {
+            font-style: italic;
+        }
+
+        .pub-list .pub-venue {
+            color: var(--sub);
+        }
+
+        .pub-list a {
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            text-decoration: none;
+            border-bottom: 1px solid var(--line);
+            white-space: nowrap;
+        }
+
+        .pub-list a:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        footer.cv-footer {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--sub);
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        @media print {
+            body {
+                background: #fff;
+            }
+
+            .no-print {
+                display: none;
+            }
+
+            .cv {
+                border: none;
+                border-radius: 0;
+                padding: 0;
+                margin: 0;
+                max-width: none;
+            }
+
+            a {
+                color: var(--ink);
+                text-decoration: underline;
+            }
+
+            @page {
+                margin: 16mm;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="no-print">
+        <a class="back-link" href="index.html">← Back to portfolio</a>
+        <button class="print-btn" onclick="window.print()">Download as PDF</button>
+    </div>
+
+    <main class="cv">
+        <div class="cv-header">
+            <h1>Giulia Renda</h1>
+            <div class="title">Digital Humanities Researcher &amp; Full-stack Developer</div>
+            <div class="contact-row">
+                <span>Cesena, Italy</span>
+                <a href="mailto:giuliarenda94@gmail.com">giuliarenda94@gmail.com</a>
+                <a href="index.html">Portfolio</a>
+                <a href="https://github.com/mondoboia" target="_blank" rel="noopener">GitHub</a>
+                <a href="#" target="_blank" rel="noopener">Google Scholar</a>
+                <a href="https://www.linkedin.com/in/giuliarenda" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+        </div>
+
+        <section>
+            <h2>Profile</h2>
+            <p class="summary">Digital Humanities researcher and full-stack developer specialising in Semantic Web
+                technologies, multimodal cultural heritage data, and interpretable interfaces. My work combines
+                humanistic research, semantic data modelling, and software development to create transparent and
+                reusable systems for heterogeneous cultural heritage data.</p>
+        </section>
+
+        <section>
+            <h2>Work Experience</h2>
+
+            <div class="entry">
+                <div class="entry-head">
+                    <div><span class="entry-role">Software Engineer &amp; Semantic Web Specialist</span> — <span
+                            class="entry-org">/DH.arc, University of Bologna</span></div>
+                    <div class="entry-meta">Bologna · Nov 2021 — Jul 2026</div>
+                </div>
+                <div class="entry-note">Responsible for core software and data pipelines for international projects
+                    (H2020 Polifonia, CHANGES), within a continuous path that started as an intern, evolved into a
+                    research grant, and consolidated during the PhD.</div>
+                <ul>
+                    <li><b>MELODY</b> (Lead Full-stack Developer) — design and development of a web platform for data
+                        storytelling based on Linked Open Data and SPARQL. Managed the full software lifecycle:
+                        prototyping, full-stack development, maintenance of online instances, and support for use in
+                        master's courses and research activities. Implemented dynamic components for querying, HTML
+                        rendering, and data visualization.</li>
+                    <li><b>Polifonia Portal</b> (Backend &amp; Data Engineer) — developed the web portal for integrating
+                        and exploring 9 heterogeneous Knowledge Graphs. Implemented data reconciliation pipelines,
+                        text-search indexing (Sonic), and REST APIs for unified access to distributed datasets.
+                        Experimented with local LLM models (Ollama) in data-cleaning pipelines for preprocessing and
+                        normalising fuzzy dates. Managed containerisation and deployment with Docker.</li>
+                    <li><b>Digital Twin Aldrovandi</b> (API &amp; Integration Engineer) — developed a service-oriented
+                        API layer for the dynamic integration of semantic data and interactive visualizations in
+                        navigable 3D environments and Digital Twins. Implemented HTML/JSON rendering for runtime
+                        injection of data-driven content during virtual exploration.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-head">
+                    <div><span class="entry-role">Teaching Assistant</span> — <span class="entry-org">University of
+                            Bologna</span></div>
+                    <div class="entry-meta">Bologna · 2022 — Present</div>
+                </div>
+                <ul>
+                    <li><b>Technical Training &amp; Mentorship</b> — technical and methodological support for master's
+                        courses in Information Visualization and Semantic Web technologies.</li>
+                    <li><b>Technical Training</b> — teaching introductory modules on Internet Architecture and version
+                        control systems (Git).</li>
+                    <li><b>Project Supervision</b> — tutoring and co-supervision of master's theses.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-head">
+                    <div><span class="entry-role">Data Visualization Consultant</span> — <span
+                            class="entry-org">Fondazione Federico Zeri</span></div>
+                    <div class="entry-meta">Bologna · 2024</div>
+                </div>
+                <ul>
+                    <li>Data quality analysis, cleaning, and structuring of complex historical-artistic datasets for
+                        research activities and exploratory visualization, for the project <i>Il mercato antiquario in
+                            Italia tra Otto e Novecento</i>.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-head">
+                    <div><span class="entry-role">Visiting Research Fellow</span> — <span class="entry-org">Knowledge
+                            Media Institute, Open University</span></div>
+                    <div class="entry-meta">Milton Keynes · Apr 2024 — Jul 2024</div>
+                </div>
+                <ul>
+                    <li><b>Visual Analytics &amp; Knowledge Discovery</b> — applied research on extracting and
+                        interpreting patterns in complex datasets.</li>
+                    <li><b>Pipeline Engineering</b> — design and development of a pipeline for analysing complex
+                        cultural collections, integrating Formal Concept Analysis (FCA), data visualization, and visual
+                        saliency techniques.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+
+            <div class="entry">
+                <div class="entry-head">
+                    <div><span class="entry-role">PhD in Cultural Heritage in the Digital Ecosystem</span> — <span
+                            class="entry-org">University of Bologna</span></div>
+                    <div class="entry-meta">Bologna · Mar 2023 — Jul 2026</div>
+                </div>
+                <div class="thesis">Thesis: Narrative Visualisation as Epistemic Practice in the Semantic Web:
+                    Supporting Interpretive Practices in Cultural Heritage</div>
+                <div class="supervisor">Supervisor: Prof. Marilena Daquino. Focus on interpretability, multimodal data
+                    integration, and infrastructural reuse of Semantic Web technologies, combining design methodology,
+                    empirical evaluation of learning practices, and API-based system development.</div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-head">
+                    <div><span class="entry-role">Master's Degree in Digital Humanities and Digital Knowledge</span> —
+                        <span class="entry-org">University of Bologna</span>
+                    </div>
+                    <div class="entry-meta">Bologna · 2022</div>
+                </div>
+                <div class="thesis">Thesis: MELODY: a Dashboard for Linked Data Visualization and Storytelling — 110/110
+                    with honors</div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-head">
+                    <div><span class="entry-role">Bachelor's Degree in History</span> — <span
+                            class="entry-org">University of Bologna</span></div>
+                    <div class="entry-meta">Bologna · 2017</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-row"><b>Python</b> — Flask, REST APIs, Sonic indexing</div>
+                <div class="skill-row"><b>Semantic Web</b> — SPARQL, RDF/OWL, CIDOC-CRM, IIIF</div>
+                <div class="skill-row"><b>DevOps</b> — Docker, Git, deployment workflows, containerised applications
+                </div>
+                <div class="skill-row"><b>Graph Databases</b> — Blazegraph, Jena Fuseki, RDFLib, SPARQLWrapper</div>
+                <div class="skill-row"><b>Frontend</b> — JavaScript ES6+, React, jQuery, HTML5/CSS/Bootstrap</div>
+                <div class="skill-row"><b>Data Science</b> — pandas, NumPy, scikit-learn</div>
+                <div class="skill-row"><b>Data Visualization</b> — D3.js, Chart.js, amCharts, Plotly, RAWGraphs,
+                    Matplotlib, Seaborn</div>
+                <div class="skill-row"><b>Machine Learning &amp; NLP (basics)</b> — Ollama, prompt engineering for data
+                    normalization, NLP (scikit-learn, familiarity with SBERT/NLTK)</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Languages</h2>
+            <div class="tags">
+                <span class="lang-tag">Italian</span>
+                <span class="lang-tag">English</span>
+                <span class="lang-tag">French</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Other Roles</h2>
+            <ul class="other-roles">
+                <li>Peer reviewer for journals and conferences in computing, semantic web, and digital cultural
+                    heritage: Journal on Computing and Cultural Heritage, Journal of Web Semantics, Umanistica Digitale,
+                    SoftwareX, SEMANTiCS, DigitalHeritage, AIUCD.</li>
+                <li>Organisation of technical events and workshops on Digital Humanities and data storytelling,
+                    including Digital WHOmanities and Storie di Dati.</li>
+                <li>Public speaking and technical presentations in webinars and international conferences, including
+                    Europeana, Building Knowledge Landscapes, and CORDH.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Publications</h2>
+            <ol class="pub-list">
+                <li>Barzaghi, S., Bordignon, A., Collina, F., et al. 2025. <span class="pub-title">A Reproducible
+                        Workflow for the Creation of Digital Twins in the Cultural Heritage Domain.</span> <span
+                        class="pub-venue">Transformations: A DARIAH Journal Workflows</span> (July). <a
+                        href="https://doi.org/10.46298/transformations.14773" target="_blank"
+                        rel="noopener">doi.org/10.46298/transformations.14773</a></li>
+                <li>Barzaghi, S., Bordignon, A., Gualandi, B., et al. 2024. <span class="pub-title">A Proposal for a
+                        FAIR Management of 3D Data in Cultural Heritage: The Aldrovandi Digital Twin Case.</span> <span
+                        class="pub-venue">Data Intelligence</span> 2: 1–32. <a
+                        href="https://dx.doi.org/10.3724/2096-7004.di.2024.0061" target="_blank"
+                        rel="noopener">dx.doi.org/10.3724/2096-7004.di.2024.0061</a></li>
+                <li>Barzaghi, S., Colitti, S., Moretti, A., and Renda, G. 2025. <span class="pub-title">From Metadata to
+                        Storytelling: A Framework For 3D Cultural Heritage Visualization on RDF Data.</span> In <span
+                        class="pub-venue">Diversità, Equità e Inclusione: Sfide e Opportunità per l'Informatica
+                        Umanistica Nell'Era Dell'Intelligenza Artificiale</span>, edited by S. Rebora, M. Rospocher, and
+                    S. Bazzaco. AIUCD. <a href="https://doi.org/10.6092/unibo/amsacta/8380" target="_blank"
+                        rel="noopener">doi.org/10.6092/unibo/amsacta/8380</a></li>
+                <li>Battisti, T., Pasqual, V., Renda, G., and Daquino, M. 2026. <span class="pub-title">Making
+                        Uncertainty Explicit: The Preservation of Interpretative Complexity across Digital Humanities
+                        Project Workflows.</span> <span class="pub-venue">Proceedings of the 15th Annual Conference of
+                        the Association for Digital Humanities and Digital Culture</span> (Cagliari).</li>
+                <li>Grasso, M., Daquino, M., and Renda, G. 2024. <span class="pub-title">From Ontology Design to User
+                        Experience. A Methodology to Design Interfaces for Information Seeking Purposes.</span> <span
+                        class="pub-venue">Umanistica Digitale</span>, no. 18: 53–85. <a
+                        href="https://doi.org/10.6092/issn.2532-8816/19038" target="_blank"
+                        rel="noopener">doi.org/10.6092/issn.2532-8816/19038</a></li>
+                <li>Grasso, M., Renda, G., and Daquino, M. 2024. <span class="pub-title">From Data Complexity to User
+                        Simplicity: A Framework for Linked Open Data Reconciliation and Serendipitous Discovery.</span>
+                    In <span class="pub-venue">Me.Te. Digitali. Mediterraneo in Rete Tra Testi e Contesti</span>, edited
+                    by A. Di Silvestro and D. Spampinato. AIUCD. <a href="https://arxiv.org/abs/2405.15520"
+                        target="_blank" rel="noopener">arxiv.org/abs/2405.15520</a></li>
+                <li>Renda, G., and Daquino, M. 2025. <span class="pub-title">Ragù. Preserving Italian Cookbooks in a
+                        Sustainable Crowdsourced Digital Collection.</span> <span class="pub-venue">Umanistica
+                        Digitale</span>, no. 20 (July): 405–18. <a href="https://doi.org/10.6092/issn.2532-8816/21113"
+                        target="_blank" rel="noopener">doi.org/10.6092/issn.2532-8816/21113</a></li>
+                <li>Renda, G., and Daquino, M. 2026. <span class="pub-title">Do Information Visualisation and Semantic
+                        Web Get on Well? A Study on the Usage of Storytelling Platforms to Improve Data Literacy
+                        Skills.</span> <span class="pub-venue">Umanistica Digitale</span>, no. 22 (January): 1–23. <a
+                        href="https://doi.org/10.60923/issn.2532-8816/21755" target="_blank"
+                        rel="noopener">doi.org/10.60923/issn.2532-8816/21755</a></li>
+                <li>Renda, G., and Daquino, M. 2026. <span class="pub-title">Learning Data Storytelling and SPARQL in
+                        the Humanities: Tracking the Co-Evolution of Skills.</span> <span class="pub-venue">Journal of
+                        Information Science</span> (accepted, to be published soon).</li>
+                <li>Renda, G., Daquino, M., and Presutti, V. 2023. <span class="pub-title">Melody: A Platform for Linked
+                        Open Data Visualisation and Curated Storytelling.</span> <span class="pub-venue">Proceedings of
+                        the 34th ACM Conference on Hypertext and Social Media</span>, HT '23, 1–8. <a
+                        href="https://doi.org/10.1145/3603163.3609035" target="_blank"
+                        rel="noopener">doi.org/10.1145/3603163.3609035</a></li>
+            </ol>
+        </section>
+
+        <footer class="cv-footer">Last updated 2026.</footer>
+    </main>
+
+</body>
+
+</html>
