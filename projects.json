@@ -16,16 +16,16 @@
             "HTML5",
             "CSS"
         ],
-        "role": "Contributed to the Aldrovandi Digital Twin within the CHANGES project (NextGenerationEU, PE 0000020). Worked on software development, semantic data modelling, and integration workflows linking 3D cultural heritage assets, Linked Open Data, and narrative visualisation services across web and VR. Extended the MELODY platform into an API-based narrative visualisation service, enabling dynamic integration of semantic data, visualisations, and contextual narratives within the Aton digital twin environment. Also built the companion web catalogue for browsing, searching, and exploring the digitised objects outside the immersive experience.",
+        "role": "Worked on the Aldrovandi Digital Twin within the CHANGES project (NextGenerationEU, PE 0000020), contributing across semantic data modelling, software development, and the integration of 3D assets with Linked Open Data and narrative visualisation services. I contributed to metadata collection and early semantic modelling, then developed the MELODY API to dynamically integrate semantic data, visualisations, and contextual narratives into the ATON web and VR environments. I also developed the companion web catalogue for browsing and exploring the digitised objects outside the immersive experience. This work involved close collaboration with cultural heritage scholars, 3D specialists, data modellers, and developers, and contributed to a reusable workflow for 3D cultural heritage publication.",
         "link": "https://projects.vidilab.unibo.it/aldrovandi/",
         "papers": [
             {
-                "label": "(Barzaghi et al. 2025)",
+                "label": "(Barzaghi et al. 2025a)",
                 "title": "A reproducible workflow for the creation of digital twins in the cultural heritage domain",
                 "url": "https://transformations.episciences.org/articles/14773"
             },
             {
-                "label": "(Barzaghi et al. 2025)",
+                "label": "(Barzaghi et al. 2025b)",
                 "title": "From Metadata to Storytelling: A Framework For 3D Cultural Heritage Visualization on RDF Data",
                 "url": "https://amsacta.unibo.it/id/eprint/8380/"
             },
@@ -53,7 +53,7 @@
             "HTML5",
             "CSS"
         ],
-        "role": "Lead Full-stack Developer on MELODY (Polifonia, H2020, G.A. 101004746), grown out of my master's thesis into an actively maintained platform. Own the full software lifecycle — prototyping, full-stack development, and maintenance of live instances — and built the dynamic components for SPARQL querying, HTML rendering, and data visualisation that power the storytelling experience.",
+        "role": "Lead Full-stack Developer on MELODY (Polifonia, H2020, G.A. 101004746), originally developed from my master’s thesis and subsequently expanded within the Polifonia project. I lead the full software lifecycle, from prototyping and architectural design to full-stack development, deployment, documentation, and maintenance of live instances. I developed the reusable components for SPARQL querying, data aggregation, visualisation, HTML rendering, and narrative composition that underpin the platform’s storytelling workflow.",
         "link": "https://projects.dharc.unibo.it/melody/",
         "papers": [
             {
@@ -80,7 +80,7 @@
             "Blazegraph",
             "Docker"
         ],
-        "role": "Backend & Data Engineer on the Polifonia Web Portal (Polifonia, H2020, G.A. 101004746). Built the Flask backend and RESTful APIs consumed by a React-native frontend, implemented data reconciliation pipelines to align entities across nine heterogeneous knowledge graphs stored in Blazegraph, integrated Sonic for fast text-search indexing, and containerised and deployed the system with Docker.",
+        "role": "Backend & Data Engineer on the Polifonia Web Portal (Polifonia, H2020, G.A. 101004746). Built the Flask backend and REST APIs supporting a React frontend, implemented reconciliation workflows to align entities across nine heterogeneous knowledge graphs, and integrated Sonic indexing to support rapid search and exploratory access.",
         "link": "https://polifonia.disi.unibo.it/portal/",
         "papers": [
             {
@@ -114,7 +114,7 @@
             "HTML5",
             "CSS"
         ],
-        "role": "Extracted, organised, manipulated, and visualised the underlying Linked Open Data for the project, from SPARQL querying against the Zeri archive through to the final interactive visualisations.",
+        "role": "Queried and transformed Linked Open Data from the Zeri Photographic Archive, prepared the resulting datasets in Python, and developed the interactive visualisations used to communicate the movement and provenance of artworks.",
         "link": "https://elisasilvad.github.io/the_journey_of_art/",
         "papers": []
     },
@@ -135,7 +135,7 @@
             "CSS",
             "JavaScript"
         ],
-        "role": "Defined the competency questions, contributed to part of the conceptual model, and formalised it into an OWL ontology using Protégé, publishing the documentation with WIDOCO.",
+        "role": "Defined competency questions, contributed to the conceptual modelling process, and formalised the resulting ontology module in OWL using Protégé.",
         "link": "https://coolmodule.github.io/CoolProject/",
         "papers": []
     },
@@ -144,7 +144,7 @@
         "year": 2020,
         "status": "concluded",
         "image": "images/woods.png",
-        "description": "A Linked Open Data project connecting heterogeneous objects and entities — with seemingly little in common — to reveal their shared historical association with a single event.",
+        "description": "A Linked Open Data project modelling the relationships between heterogeneous cultural and historical entities connected to a shared event, using established cultural heritage and temporal ontologies.",
         "stack": [
             "RDF",
             "Turtle",
@@ -172,7 +172,7 @@
             "JSON",
             "GitHub Actions"
         ],
-        "role": "In charge of data management for Ragù, structuring and cleaning the archive's dataset and automating catalogue updates.",
+        "role": "Managed the project’s data workflow, including  cleaning, validation, and automated catalogue updates through Python scripts and GitHub Actions.",
         "link": "https://raguproject.github.io/",
         "papers": [
             {
