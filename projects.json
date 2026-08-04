@@ -31,6 +31,11 @@
                 "url": "https://amsacta.unibo.it/id/eprint/8380/"
             },
             {
+                "label": "(Ammirati et al. 2025)",
+                "title": "Implementation of pilot studies – Type B",
+                "url": "https://zenodo.org/records/17237906"
+            },
+            {
                 "label": "(Barzaghi et al. 2024)",
                 "title": "A Proposal for a FAIR Management of 3D Data in Cultural Heritage: The Aldrovandi Digital Twin Case",
                 "url": "https://dx.doi.org/10.3724/2096-7004.di.2024.0061"
@@ -62,6 +67,16 @@
                 "label": "(Renda et al. 2023)",
                 "title": "Melody: A Platform for Linked Open Data Visualisation and Curated Storytelling",
                 "url": "https://dl.acm.org/doi/10.1145/3603163.3609035"
+            },
+            {
+                "label": "(Daquino et al. 2024)",
+                "title": "D1.10: Polifonia Web portal – 2nd Version",
+                "url": "https://zenodo.org/records/11120387"
+            },
+            {
+                "label": "(Renda and Daquino 2026)",
+                "title": "Do Information Visualisation and Semantic Web Get on Well? A study on the usage of storytelling platforms to improve data literacy skills",
+                "url": "https://doi.org/10.60923/issn.2532-8816/21755"
             }
         ]
     },
@@ -96,6 +111,11 @@
                 "label": "(Grasso et al. 2024)",
                 "title": "From Data Complexity to User Simplicity: A Framework for Linked Open Data Reconciliation and Serendipitous Discovery",
                 "url": "https://arxiv.org/abs/2405.15520"
+            },
+            {
+                "label": "(Daquino et al. 2024)",
+                "title": "D1.10: Polifonia Web portal – 2nd Version",
+                "url": "https://zenodo.org/records/11120387"
             }
         ]
     },
