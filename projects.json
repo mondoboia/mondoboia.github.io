@@ -10,11 +10,11 @@
             "Python",
             "Flask",
             "SPARQL",
-            "Fuseki",
+            "Apache Jena Fuseki",
             "JavaScript",
             "Chart.js",
             "D3.js",
-            "HTML5",
+            "HTML",
             "CSS"
         ],
         "role": "Worked on the Aldrovandi Digital Twin within the CHANGES project (NextGenerationEU, PE 0000020), contributing across semantic data modelling, software development, and the integration of 3D assets with Linked Open Data and narrative visualisation services. I contributed to metadata collection and early semantic modelling, then developed the MELODY API to dynamically integrate semantic data, visualisations, and contextual narratives into the ATON web and VR environments. I also developed the companion web catalogue for browsing and exploring the digitised objects outside the immersive experience. This work involved close collaboration with cultural heritage scholars, 3D specialists, data modellers, and developers, and contributed to a reusable workflow for 3D cultural heritage publication.",
@@ -51,8 +51,7 @@
             "JavaScript",
             "React",
             "SPARQL",
-            "Ajax",
-            "HTML5",
+            "HTML",
             "CSS"
         ],
         "role": "Lead Full-stack Developer on MELODY (Polifonia, H2020, G.A. 101004746), originally developed from my master’s thesis and subsequently expanded within the Polifonia project. I lead the full software lifecycle, from prototyping and architectural design to full-stack development, deployment, documentation, and maintenance of live instances. I developed the reusable components for SPARQL querying, data aggregation, visualisation, HTML rendering, and narrative composition that underpin the platform’s storytelling workflow.",
@@ -114,7 +113,7 @@
             "matplotlib",
             "JavaScript",
             "amCharts",
-            "HTML5",
+            "HTML",
             "CSS"
         ],
         "role": "Queried and transformed Linked Open Data from the Zeri Photographic Archive, prepared the resulting datasets in Python, and developed the interactive visualisations used to communicate the movement and provenance of artworks.",
