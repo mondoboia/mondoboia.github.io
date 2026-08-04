@@ -39,7 +39,7 @@
     {
         "title": "MELODY — Make mE a Linked Open Data storY",
         "year": 2025,
-        "status": "mantained",
+        "status": "maintained",
         "image": "images/melody.png",
         "description": "An extensible, reusable web platform for retrieving, presenting, and publishing Linked Data as interactive Data Stories, used in graduate courses and ongoing research.",
         "stack": [
@@ -66,7 +66,7 @@
     {
         "title": "Polifonia Web Portal",
         "year": 2024,
-        "status": "mantained",
+        "status": "maintained",
         "image": "images/portal.png",
         "description": "A web application for serendipitous exploration of musical heritage data from the Polifonia project, integrating nine heterogeneous knowledge graphs through fast text-search indexing and a unified REST API.",
         "stack": [
@@ -162,7 +162,7 @@
     {
         "title": "Ragù",
         "year": 2023,
-        "status": "mantained",
+        "status": "maintained",
         "image": "images/ragu.svg",
         "description": "A digital archive collecting, cataloguing, and making accessible a little-explored part of Italian culinary heritage: handwritten family cookbooks.",
         "stack": [
