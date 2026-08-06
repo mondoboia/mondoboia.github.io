@@ -103,12 +103,12 @@
         "link": "https://polifonia.disi.unibo.it/portal/",
         "papers": [
             {
-                "label": "(Grasso et al. 2024)",
+                "label": "(Grasso et al. 2024a)",
                 "title": "From Ontology Design to User Experience. A Methodology to Design Interfaces for Information Seeking Purposes",
                 "url": "https://umanisticadigitale.unibo.it/article/view/19038"
             },
             {
-                "label": "(Grasso et al. 2024)",
+                "label": "(Grasso et al. 2024b)",
                 "title": "From Data Complexity to User Simplicity: A Framework for Linked Open Data Reconciliation and Serendipitous Discovery",
                 "url": "https://arxiv.org/abs/2405.15520"
             },
