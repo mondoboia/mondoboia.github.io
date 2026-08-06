@@ -1,25 +1,5 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// ---- Hero headline rotator — edit this list to change what cycles through ----
-const rotatorWords = [
-    "Linked Data systems",
-    "cultural heritage infrastructures",
-    "semantic data pipelines",
-    "data storytelling tools"
-];
-const rotatorEl = document.getElementById('rotator');
-if (rotatorEl && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    let rIdx = 0;
-    setInterval(() => {
-        rotatorEl.classList.add('fade-out');
-        setTimeout(() => {
-            rIdx = (rIdx + 1) % rotatorWords.length;
-            rotatorEl.textContent = rotatorWords[rIdx];
-            rotatorEl.classList.remove('fade-out');
-        }, 300);
-    }, 2600);
-}
-
 const list = document.getElementById('list');
 const loadState = document.getElementById('load-state');
 const countLabel = document.getElementById('project-count');

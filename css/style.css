@@ -111,6 +111,59 @@ a {
     }
 }
 
+.hero-layout {
+    display: flex;
+    gap: 36px;
+    align-items: flex-start;
+}
+
+.icon-rail {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-shrink: 0;
+    padding-top: 4px;
+}
+
+.icon-rail a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1.5px solid #ffffff;
+    color: #ffffff;
+    transition: background .18s, color .18s;
+}
+
+.icon-rail a svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.icon-rail a:hover {
+    background: #ffffff;
+    color: var(--primary);
+}
+
+.hero-text {
+    min-width: 0;
+}
+
+@media (max-width:640px) {
+    .hero-layout {
+        flex-direction: column-reverse;
+        gap: 28px;
+    }
+
+    .icon-rail {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
 .byline {
     font-family: var(--font-mono);
     font-size: 16px;
@@ -125,11 +178,11 @@ a {
 
 h1 {
     font-weight: 700;
-    font-size: clamp(44px, 6.5vw, 84px);
-    line-height: 1.04;
-    letter-spacing: -0.02em;
-    margin: 0 0 28px;
-    max-width: 720px;
+    font-size: clamp(30px, 4.2vw, 52px);
+    line-height: 1.12;
+    letter-spacing: -0.015em;
+    margin: 0 0 24px;
+    max-width: 640px;
     color: #ffffff;
 }
 
@@ -138,44 +191,22 @@ h1 .accent {
     font-weight: 700;
 }
 
-.rotator {
-    display: inline-block;
-    transition: opacity .3s ease, transform .3s ease;
-}
-
-.rotator.fade-out {
-    opacity: 0;
-    transform: translateY(6px);
-}
-
 .hero p {
     max-width: 560px;
     color: rgba(255, 255, 255, 0.85);
     font-size: 19px;
     line-height: 1.6;
-    margin: 0 0 36px;
+    margin: 0;
 }
 
-.hero-links {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-}
-
-.hero-links a {
-    font-family: var(--font-mono);
-    font-size: 14px;
-    text-decoration: none;
+.cv-link {
     color: #ffffff;
-    border: 1.5px solid #ffffff;
-    padding: 11px 22px;
-    border-radius: 100px;
-    transition: background .18s, color .18s, border-color .18s;
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
 }
 
-.hero-links a:hover {
-    background: #ffffff;
-    color: var(--primary);
+.cv-link:hover {
+    color: var(--accent);
 }
 
 /* ---------- Section title ---------- */
@@ -462,7 +493,7 @@ footer {
 
 /* focus visibility for keyboard users */
 .row:focus-visible,
-.hero-links a:focus-visible {
+.icon-rail a:focus-visible {
     outline: 2px solid var(--primary);
     outline-offset: 3px;
 }
